@@ -1,0 +1,6 @@
+account_id                  = "123456789012"
+region                      = "us-east-1"
+slack_webhook_url           = "https://hooks.slack.com/services/T.../B.../..."
+github_token                = "github_pat_..."
+github_repo                 = "yourusername/security-lab-incidents"
+sns_topic_arn_for_anomalies = "arn:aws:sns:us-east-1:123456789012:anomaly-detections"
