@@ -106,25 +106,12 @@ SOC-style response runbooks, one per detection class:
 
 ## Demo
 
-<DEMO VIDEO LINK — 3-minute walkthrough: trigger → detection → Step Functions →
+https://www.dropbox.com/scl/fi/73h485pd4yz0sg6b2z1oj/aws-SOAR-demo.mov?rlkey=gdlvtx60zs6bn7qzvflzc4iu4&st=y2jq4ih8&dl=0 — 3-minute walkthrough: trigger → detection → Step Functions →
 Slack approval → containment → GitHub issue>
 
-### Detection firing end-to-end
-<SCREENSHOT: detector Lambda log showing "Published anomaly" for CreateAccessKey>
-
-### SOAR playbook execution
-<SCREENSHOT: Step Functions execution graph, all states green>
-
-### Human-in-the-loop approval
-<SCREENSHOT: Slack approval request with Approve/Reject buttons>
-
-### Containment applied
-<SCREENSHOT: IAM user showing the SOAR-QuarantineDenyAll inline Deny policy>
-
-### Auto-filed incident
-<SCREENSHOT: GitHub issue with severity label, evidence link, triage checklist>
-
 ## Project structure
+
+```
 .
 ├── terraform/
 │   ├── phase1/   # CloudTrail, GuardDuty, Config, KMS, S3
@@ -134,6 +121,7 @@ Slack approval → containment → GitHub issue>
 ├── scripts/phase3/   # anomaly trigger script
 ├── runbooks/         # SOC response runbooks
 └── docs/             # architecture diagram, MITRE mapping, screenshots
+```
 
 ## Reproducing from scratch
 
