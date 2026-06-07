@@ -196,7 +196,8 @@ resource "aws_lambda_function" "notify_slack" {
 
   environment {
     variables = {
-      SLACK_SECRET_ID = aws_secretsmanager_secret.slack_webhook.name
+      SLACK_SECRET_ID   = aws_secretsmanager_secret.slack_webhook.name
+      APPROVAL_API_BASE = aws_apigatewayv2_api.approval.api_endpoint
     }
   }
 
