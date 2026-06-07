@@ -18,9 +18,10 @@ resource "aws_lambda_function" "responder" {
 
   environment {
     variables = {
-      STATE_MACHINE_ARN = "arn:aws:states:${var.region}:${var.account_id}:stateMachine:${var.state_machine_name}"
-      AUDIT_BUS_NAME    = aws_cloudwatch_event_bus.soar_audit.name
-      LOG_LEVEL         = "INFO"
+      STATE_MACHINE_ARN         = "arn:aws:states:${var.region}:${var.account_id}:stateMachine:${var.state_machine_name}"
+      AUDIT_BUS_NAME            = aws_cloudwatch_event_bus.soar_audit.name
+      LOG_LEVEL                 = "INFO"
+      EXEMPT_PRINCIPAL_PATTERNS = ":root,security-lab-admin,soar-,security-lab-activity,security-lab-detector,security-lab-responder"
     }
   }
 

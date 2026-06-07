@@ -33,3 +33,12 @@ output "state_machine_log_group" {
 output "approval_callback_function_name" {
   value = aws_lambda_function.approval_callback.function_name
 }
+
+output "approval_api_url" {
+  value       = "${aws_apigatewayv2_api.approval.api_endpoint}/approval"
+  description = "Endpoint analysts hit to approve/reject. Append ?token=...&decision=approve|reject"
+}
+
+output "approval_api_access_log_group" {
+  value = aws_cloudwatch_log_group.api_access.name
+}
